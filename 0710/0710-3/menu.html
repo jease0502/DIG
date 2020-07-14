@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        nav{
+            width: 300px;
+            height: 30px;
+            background-color: darkgray;
+        }
+
+        nav > div{
+            position: relative;
+            cursor: pointer;
+            display: block;
+            width: 33.333%;
+            height: 30px;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+            transition: background 0.2s;
+        }
+        nav > div:hover{
+            background-color: darkorange;
+        }
+        nav > div:hover >.child{
+            height: 90px;
+            opacity: 1;
+        }
+        nav > div > .child{
+            position: absolute;
+            top: 30px;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            height: 0px;
+            overflow: hidden;
+            transition: height 0.4s,  opacity 0.4s;
+        }
+        nav > div > .child > a{
+            display: block;
+            width: 100%;
+            height: 30px;
+            background-color: darkseagreen;
+        }
+        nav > div > .child > a:hover{
+            background-color: dodgerblue;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>選項一</div>
+        <div>
+            選項二
+            <div class="child">
+                <a>子選項一</a>
+                <a>子選項二</a>
+                <a>子選項三</a>
+            </div>
+        </div>
+        <div>選項三</div>
+    </nav>
+
+
+</body>
+</html>

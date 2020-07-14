@@ -1,0 +1,133 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.stage{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: skyblue;
+}
+
+.Start-stage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    &.hidden{
+        display: none;
+    }
+    >a#start-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 50px;
+        background-color: #fff;
+        text-decoration: none;
+        color: steelblue;
+        font-family: '微軟正黑體', Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 10px;
+        border: 3px solid steelblue;
+        box-shadow: 0 2px 3px steelblue;
+        transition: background 0.3s, color 0.3s;
+        &:hover{
+            background-color: steelblue;
+            color: #fff;
+        }
+    }
+}
+.Play-stage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    &.hidden{
+        display: none;
+    }
+    >h1.ready-time{
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        font-size: 150px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: dodgerblue;
+        background-color: rgba(#000, 0.7);
+        z-index: 2;
+        &.hidden{
+            display: none;
+        }
+    }
+    >h1.game-time{
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: #fff;
+        font-size: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        z-index: 1;
+    }
+    >a.play-btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 50px;
+        background-color: #fff;
+        text-decoration: none;
+        color: steelblue;
+        font-family: '微軟正黑體', Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 10px;
+        border: 3px solid steelblue;
+        box-shadow: 0 2px 3px steelblue;
+        transition: background 0.3s, color 0.3s;
+        &:hover{
+            background-color: steelblue;
+            color: #fff;
+        }
+    }
+}
+.Over-stage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    >div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        >h1{
+            font-size: 60px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: ghostwhite;
+            text-shadow: 0 0 5px steelblue;
+            margin: 0 auto 30px auto;
+        }
+        >a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 30px;
+            background-color: ghostwhite;
+            text-decoration: none;
+            color: dodgerblue;
+        }
+    }
+}
+
+// .hidden{
+//     display: none !important;
+// }

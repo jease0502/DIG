@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading</title>
+    <script src="./laodImages.js"></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      img {
+        display: block;
+        float: left;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      .laoding {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        color: #fff;
+        font-size: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img id="img1" src="" alt="" />
+      <img id="img2" src="" alt="" />
+      <img id="img3" src="" alt="" />
+      <img id="img4" src="" alt="" />
+      <img id="img5" src="" alt="" />
+      <img id="img6" src="" alt="" />
+      <img id="img7" src="" alt="" />
+      <img id="img8" src="" alt="" />
+    </div>
+
+    <div class="laoding">
+      在正載入中...
+    </div>
+
+    <script src="./loadimg.js"></script>
+  </body>
+</html>

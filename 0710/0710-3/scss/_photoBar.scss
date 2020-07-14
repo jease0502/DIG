@@ -1,0 +1,37 @@
+
+
+#app > .photo-bar{
+    width: 100%;
+}
+#app > .photo-bar > .photo-mid{
+    max-width: 1366px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+#app > .photo-bar > .photo-mid > .photo-box{
+    position: relative;
+    width: 25%;
+    background-color: #ddd;
+    float: left;
+}
+#app > .photo-bar > .photo-mid > .photo-box > img{
+    width: 100%;
+    height: auto;
+}
+#app > .photo-bar > .photo-mid > .photo-box > .hover-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#app > .photo-bar > .photo-mid > .photo-box:hover >.hover-bg{
+    opacity: 1;
+}

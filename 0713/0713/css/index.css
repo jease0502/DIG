@@ -1,0 +1,226 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.stage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: skyblue;
+}
+
+.Start-stage {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 3;
+}
+
+.Start-stage.hidden {
+  display: none;
+}
+
+.Start-stage > a#start-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 200px;
+  height: 50px;
+  background-color: #fff;
+  text-decoration: none;
+  color: steelblue;
+  font-family: '微軟正黑體', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 3px solid steelblue;
+  -webkit-box-shadow: 0 2px 3px steelblue;
+          box-shadow: 0 2px 3px steelblue;
+  -webkit-transition: background 0.3s, color 0.3s;
+  -o-transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s;
+}
+
+.Start-stage > a#start-btn:hover {
+  background-color: steelblue;
+  color: #fff;
+}
+
+.Play-stage {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+}
+
+.Play-stage.hidden {
+  display: none;
+}
+
+.Play-stage > h1.ready-time {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 150px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: dodgerblue;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+.Play-stage > h1.ready-time.hidden {
+  display: none;
+}
+
+.Play-stage > h1.game-time {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  color: #fff;
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  z-index: 1;
+}
+
+.Play-stage > a.play-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 200px;
+  height: 50px;
+  background-color: #fff;
+  text-decoration: none;
+  color: steelblue;
+  font-family: '微軟正黑體', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 3px solid steelblue;
+  -webkit-box-shadow: 0 2px 3px steelblue;
+          box-shadow: 0 2px 3px steelblue;
+  -webkit-transition: background 0.3s, color 0.3s;
+  -o-transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s;
+}
+
+.Play-stage > a.play-btn:hover {
+  background-color: steelblue;
+  color: #fff;
+}
+
+.Over-stage {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+}
+
+.Over-stage > div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Over-stage > div > h1 {
+  font-size: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: ghostwhite;
+  text-shadow: 0 0 5px steelblue;
+  margin: 0 auto 30px auto;
+}
+
+.Over-stage > div > a {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100px;
+  height: 30px;
+  background-color: ghostwhite;
+  text-decoration: none;
+  color: dodgerblue;
+}
+/*# sourceMappingURL=index.css.map */
