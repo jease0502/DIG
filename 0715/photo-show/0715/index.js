@@ -71,7 +71,7 @@ Promise.all([
   ")
   promise1(" https://run.mocky.io/v3/f7bc1c2e-93ac-4ef6-b351-417ee9724ae1
   ")
-  promise1(" https://run.mocky.io/v3/1e5895d7-3160-4f6e-bc68-936b89188c1a
+  promise1("  https://run.mocky.io/v3/1e5895d7-3160-4f6e-bc68-936b89188c1a
   ")
 
   
