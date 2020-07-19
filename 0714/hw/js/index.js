@@ -1,27 +1,42 @@
-import imgChange from "./imgChange.js";
-import pageIdxChange from "./pageIdxChange.js";
+var count = 1;
+var pic = document.getElementById("pic");
+var pre_botton = document.getElementById("front");
+var next_botton = document.getElementById("next");
+var page_number = document.getElementById("number");
+var pic_name = '';
 
-var count = 0;
-var showImg = document.getElementById("picture");
-var pre = document.getElementById("pre");
-var next = document.getElementById("next");
-var number = document.getElementById("number");
+  
+function init(){
+    imgChange();
+    page_name_change();
+    pre_botton.addEventListener("click", function () 
+    {
+        count--;
+        if (count < 1) 
+        {
+            count = 8;
+        }
+        imgChange();
+    });
+    next_botton.addEventListener("click", function () 
+    {
+        count++;
+        if (count > 8) 
+        {
+            count = 1;
+        }
+        imgChange();
+    });
+}
+  
+function imgChange() {
+    pic_name = '../img/' + count + ".jpg";
+    pic.src = pic_name;
+    page_name_change();
+}
 
-init(function (imgArr) {
-  imgChange(imgArr, count);
-  pageIdxChange(imgArr.length);
-  pre.addEventListener("click", function () {
-    count--;
-    if (count < 0) {
-      count = imgArr.length - 1;
-    }
-    imgChange(imgArr);
-  });
-  next.addEventListener("click", function () {
-    count++;
-    if (count > imgArr.length - 1) {
-      count = 0;
-    }
-    imgChange(imgArr);
-  });
-});
+function page_name_change() {
+    page_number.innerHTML = count + "/" + "8";
+}
+
+init()

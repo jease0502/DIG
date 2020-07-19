@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tw">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Photo</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <title>Change Picture</title>
   </head>
   <body>
-    <div class="app">
-      <div class="photo">
-        <img id="picture" src="" />
-        <a id="pre" href="javascript:;">上一張</a>
+    <div id="App">
+      <div class="first">
+        <img id="pic" src="" alt="" />
+        <a id="front" href="javascript:;">上一張</a>
         <a id="next" href="javascript:;">下一張</a>
+        <h1 id="number">1/8</h1>
       </div>
-      <h1 id="number"></h1>
     </div>
+    <script src="./js/index.js"></script>
   </body>
-  <script src="./js/index.js"></script>
 </html>
