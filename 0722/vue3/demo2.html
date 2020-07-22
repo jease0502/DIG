@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: antiquewhite;
+    }
+    #box2 {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+    }
+  </style>
+  <body>
+    <div id="app">
+      <div>
+        <a href="javascript:;" @click="handBoxOpen">red</a>
+        <br />
+        <a href="javascript:;" @click="handBoxChange">blue</a>
+      </div>
+      <div id="box" v-show="isOpenBox"></div>
+      <div id="box2" v-show="!isOpenBox"></div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const App = {
+        data() {
+          return {
+            isOpenBox: false,
+          };
+        },
+        methods: {
+          handBoxOpen() {
+            this.isOpenBox = true;
+          },
+          handBoxChange() {
+            this.isOpenBox = false;
+          },
+        },
+      };
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
+</html>

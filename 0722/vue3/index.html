@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- v-on 是事件 -->
+    <div id="app">
+      <!-- <input id="inp" type="text" v-model="text" /> -->
+      <!-- <h1 id="title">{{Int}}</h1> -->
+      <!-- <a href="javascript:;" v-on:click="handAdd">Add</a> -->
+      <a href="javascript:;" @click="handAdd">Add</a>
+      <!-- <br />
+      ------------------------------------------------------------ -->
+      <br />
+      <a v-bind:href="url">這是超連結</a>
+      <br />
+      <a href="javascript:;" @click="handChange">開啟</a>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      //   const h1 = document.getElementById("title");
+      //   const inp = document.getElementById("inp");
+
+      //   inp.addEventListener("keyup", () => {
+      //     const val = document.getElementById("inp").value;
+      //     h1.innerHTML = val;
+      //   });
+
+      //   const App = {
+      //     data() {
+      //       return {
+      //         text: "hello",
+      //       };
+      //     },
+      //   };
+      //   const App = {
+      //     data: function () {
+      //       return {
+      //         text: "hello",
+      //       };
+      //     },
+      //   };
+
+      const App = {
+        data() {
+          return {
+            Int: 0,
+            url: 123,
+          };
+        },
+        methods: {
+          handAdd() {
+            this.Int++;
+          },
+          handChange() {
+            this.url = "http://google.com";
+          },
+        },
+      };
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vue3</title>
+    <link rel="stylesheet" href="./vue_demo.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="tab-bar">
+        <menu-bar
+          :menulist="menuArr"
+          :handchangepage="handChangePage"
+        ></menu-bar>
+        <page-list :activeidx="activeIdx"></page-list>
+        <!-- <div id="page-list">
+          <div v-show="activeIdx === 0" class="page bg-red">page1</div>
+          <div v-show="activeIdx === 1" class="page bg-yellow">page2</div>
+          <div v-show="activeIdx === 2" class="page bg-blue">page3</div>
+          <div v-show="activeIdx === 3" class="page bg-green">page4</div>
+          <div v-show="activeIdx === 4" class="page bg-hotpink">page5</div>
+        </div> -->
+      </div>
+      <!-- <div id="bottom-bar">
+        <div id="page-list2">
+          <div v-show="activeIdx === 0" class="page bg-red">page1</div>
+          <div v-show="activeIdx === 1" class="page bg-yellow">page2</div>
+          <div v-show="activeIdx === 2" class="page bg-blue">page3</div>
+          <div v-show="activeIdx === 3" class="page bg-green">page4</div>
+          <div v-show="activeIdx === 4" class="page bg-hotpink">page5</div>
+        </div>
+      </div> -->
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const App = {
+        data() {
+          return {
+            activeIdx: 0,
+            menuArr: [
+              { name: "選項1", id: "a" },
+              { name: "選項2", id: "b" },
+              { name: "選項3", id: "c" },
+              { name: "選項4", id: "d" },
+              { name: "選項5", id: "e" },
+            ],
+          };
+        },
+        methods: {
+          handChangePage(idx) {
+            this.activeIdx = idx;
+          },
+        },
+      };
+      const vm = Vue.createApp(App);
+
+      vm.component("menu-bar", {
+        props: {
+          menulist: Array,
+          handchangepage: Function,
+        },
+        template: `
+          <div id="menuBar">
+            <a
+              v-for="(item, idx) in menulist"
+              href="javascript:;"
+              @click="handchangepage(idx)"
+              :key="item.id"
+            >
+              {{item.name}}
+            </a>
+          </div>
+        `,
+      });
+      vm.component("page-list", {
+        props: {
+          activeidx: Number,
+        },
+        template: `
+          <div id="page-list">
+          <div v-show="activeidx === 0" class="page bg-red">page1</div>
+          <div v-show="activeidx === 1" class="page bg-yellow">page2</div>
+          <div v-show="activeidx === 2" class="page bg-blue">page3</div>
+          <div v-show="activeidx === 3" class="page bg-green">page4</div>
+          <div v-show="activeidx === 4" class="page bg-hotpink">page5</div>
+        </div>
+        `,
+      });
+      vm.mount("#app");
+    </script>
+  </body>
+</html>

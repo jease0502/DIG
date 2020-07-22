@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vue3</title>
+    <style>
+      #tab-bar {
+        width: 350px;
+        height: 200px;
+        background-color: thistle;
+      }
+      #menuBar {
+        display: flex;
+        width: 100%;
+        height: 10%;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #menuBar > a {
+        display: flex;
+        width: 20%;
+        justify-content: center;
+        align-items: center;
+      }
+      #page-list {
+        height: 90%;
+        background-color: yellowgreen;
+      }
+      .page {
+        width: 100%;
+        height: 100%;
+        font-size: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .bg-red {
+        background-color: red;
+      }
+      .bg-yellow {
+        background-color: yellow;
+      }
+      .bg-blue {
+        background-color: blue;
+      }
+      .bg-green {
+        background-color: green;
+      }
+      .bg-hotpink {
+        background-color: hotpink;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div id="tab-bar">
+        <div id="menuBar">
+          <a href="javascript:;" @mousemove="handChangePage(0)">選項1</a>
+          <a href="javascript:;" @mousemove="handChangePage(1)">選項2</a>
+          <a href="javascript:;" @mousemove="handChangePage(2)">選項3</a>
+          <a href="javascript:;" @mousemove="handChangePage(3)">選項4</a>
+          <a href="javascript:;" @mousemove="handChangePage(4)">選項5</a>
+        </div>
+        <!-- <div id="page-list">
+          <div v-show="activeIdx === 0" class="page bg-red">page1</div>
+          <div v-show="activeIdx === 1" class="page bg-yellow">page2</div>
+          <div v-show="activeIdx === 2" class="page bg-blue">page3</div>
+          <div v-show="activeIdx === 3" class="page bg-green">page4</div>
+          <div v-show="activeIdx === 4" class="page bg-hotpink">page5</div>
+        </div> -->
+        <div id="page-list">
+          <div v-if="activeIdx === 0" class="page bg-red">page1</div>
+          <div v-if="activeIdx === 1" class="page bg-yellow">page2</div>
+          <div v-if="activeIdx === 2" class="page bg-blue">page3</div>
+          <div v-if="activeIdx === 3" class="page bg-green">page4</div>
+          <div v-if="activeIdx === 4" class="page bg-hotpink">page5</div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const App = {
+        data() {
+          return {
+            activeIdx: 0,
+          };
+        },
+        methods: {
+          handChangePage(idx) {
+            this.activeIdx = idx;
+          },
+        },
+      };
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
+</html>

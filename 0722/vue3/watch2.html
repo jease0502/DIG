@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>watch</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{index}}</h1>
+      <hello-vue></hello-vue>
+      <a href="javascript:;" @click="handAdd">click</a>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const App = {
+        data() {
+          return {
+            index: 0,
+          };
+        },
+        watch: {
+          index(newVal, oldVal) {
+            console.log(newVal);
+          },
+        },
+        methods: {
+          handAdd() {
+            this.index++;
+          },
+        },
+        beforeCreate() {
+          console.log("當Vue實體創建以前");
+        },
+        created() {
+          console.log("當Vue實體創建");
+        },
+        beforeMount() {
+          console.log("當DOM渲染到畫面以前");
+        },
+        mounted() {
+          console.log("======>", document.getElementById("title"));
+          console.log("當DOM渲染到畫面結束");
+        },
+      };
+      const vm = Vue.createApp(App);
+      vm.component("hello-vue", {
+        template: `
+          <h1 id="title">哈哈哈哈</h1>
+        `,
+      });
+      vm.mount("#app");
+    </script>
+  </body>
+</html>

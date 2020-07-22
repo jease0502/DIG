@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vue3</title>
+    <link rel="stylesheet" type="text/css" href="./vue_demo.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="tab-bar">
+        <div id="menuBar">
+          <a
+            v-for="(item, idx) in MenuArr"
+            href="javascript:;"
+            @mousemove="handChangePage(idx)"
+            :key="item.id"
+          >
+            <!-- 用結構化來做會比較好，避免衝突之類的事件產昇 -->
+            {{item.name}}
+          </a>
+        </div>
+        <div id="page-list">
+          <div v-show="activeIdx === 0" class="page bg-red">page1</div>
+          <div v-show="activeIdx === 1" class="page bg-yellow">page2</div>
+          <div v-show="activeIdx === 2" class="page bg-blue">page3</div>
+          <div v-show="activeIdx === 3" class="page bg-green">page4</div>
+          <div v-show="activeIdx === 4" class="page bg-hotpink">page5</div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+      const App = {
+        data() {
+          return {
+            activeIdx: 0,
+            MenuArr: [
+              { name: "選項1", id: "a" },
+              { name: "選項2", id: "b" },
+              { name: "選項3", id: "c" },
+              { name: "選項4", id: "d" },
+              { name: "選項5", id: "e" },
+            ],
+            // MenuArr: ["選項1", "選項2", "選項3", "選項4", "選項5"],
+          };
+        },
+        methods: {
+          handChangePage(idx) {
+            console.log(idx);
+            this.activeIdx = idx;
+          },
+        },
+      };
+      Vue.createApp(App).mount("#app");
+    </script>
+  </body>
+</html>
